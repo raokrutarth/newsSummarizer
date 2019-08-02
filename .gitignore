@@ -1,0 +1,5 @@
+chat/config.yaml
+.vscode
+.DS_Store
+*.pyc
+data/*
