@@ -1,16 +1,11 @@
 # newsSummarizer
 
-Answers the questions you care about from your favourite newsletters through a chatbot
+Answers direct questions from selected sources through a chatbot.
 
 ## Design
 
-![Design Overview](docs/design.png)
+[Design Doc](https://docs.google.com/document/d/1VSOjpRiMYwyWRsGnEiJc1dSoIOWX7MYKEzPeqAmE9c8/edit#)
 
-- Cassandra cluster is preffered for realtime big data with SQL like interface.
-- Cassandra out performs other NoSQL databases
-- MongoDB will be easier to keep "current state" like information
-- Cassandra cluster can be used to store data plane (in-use articles, labels etc.)
-- Tensorflow model needs to be saved to the file system. Maybe backed up to cloud.
-- Archive service will store labelled data in HDFS cluster. Cluster mounted on large disk.
+## Usage
 
 
