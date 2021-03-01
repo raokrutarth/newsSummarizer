@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: derive-dep
+  labels:
+    app: derive
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: derive
+  template:
+    metadata:
+      labels:
+        app: derive
+    spec:
+      containers:
+        - name: derive
+          image: derive
+          imagePullSecrets:
+            - name: dockercred
+          ports:
+            - containerPort: 5000

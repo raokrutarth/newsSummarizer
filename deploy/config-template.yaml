@@ -1,0 +1,3 @@
+kubeconfig_path: /home/zee/.kube/config.yaml
+mode: "development" # ["production", "development", "test"]
+# TODO any other settings that could be useful when setting up the infra

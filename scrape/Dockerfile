@@ -1,7 +1,7 @@
 ##### Stage 1 #####
 FROM python:3.8 AS builder
 
-ENV APP_ROOT_DIR="/opt/chat"
+ENV APP_ROOT_DIR="/opt/scrape"
 RUN mkdir -p $APP_ROOT_DIR
 WORKDIR $APP_ROOT_DIR
 
@@ -27,10 +27,11 @@ WORKDIR ${APP_ROOT_DIR}
 COPY --from=builder ${POETRY_HOME} ${POETRY_HOME}
 COPY --from=builder ${APP_ROOT_DIR}/.venv ${APP_ROOT_DIR}/.venv
 
-ENV RUNTIME_MODE "production"
+ENV SCRAPECONF_RUNTIME_MODE "production"
 
 COPY ./app ./app
 COPY ./scripts/start.sh ./start.sh
 
 ENV PYTHONPATH="${PYTHONPATH}:${APP_ROOT_DIR}/app"
-ENTRYPOINT ["/opt/chat/start.sh"]
+RUN poetry shell
+ENTRYPOINT ["/opt/scrape/start.sh"]

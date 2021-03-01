@@ -1,0 +1,4 @@
+# TODO write production docker compose with:
+# - no open ports.
+# - HA Proxy for external endpoints with api rate limiting.
+# - Encrypted communication between services.
